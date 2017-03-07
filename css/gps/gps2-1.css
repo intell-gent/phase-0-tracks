@@ -1,0 +1,33 @@
+body{
+  max-width:100%;
+  font-family: helvetica, sans-serif;
+  background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+}
+.column-1, .column-2 {
+  border-radius: 10px;
+   box-sizing: border-box;
+}
+
+.column-1{
+  margin:5% 0 5% 5%;
+  background-color: lightblue;
+  border: 2px solid blue;
+  padding:10px;
+  display:inline-block;
+  max-width:40%;
+}
+.column-2{
+  margin:5%;
+  background-color: pink;
+  border: 2px solid red;
+  padding:10px;
+  display:inline-block;
+  max-width:40%;
+  vertical-align:top;
+}
+header, footer {
+  margin: 5% 10% 0% 5%;
+  background-color: lightgreen;
+  border: 2px solid green;
+  border-radius: 5px;
+}
