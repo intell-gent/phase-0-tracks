@@ -1,0 +1,14 @@
+- scan and press the call elevator button
+    + enter elevator
+- ask the unser what floor,
+    - check to see if respones is a number
+        - scan see if the number is a valid floor
+            + click the floors button
+        - Wait three seconds for a response.
+        - if user does not reply ask if they wish to use the elevator
+            - asks the use for the floor again
+    - wait until floor button turns off
+        - inform user they have arrived at the floor
+        - exit elevator
+
+
