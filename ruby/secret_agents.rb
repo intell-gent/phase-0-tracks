@@ -30,7 +30,28 @@ def decrypt(string)
 	end
 	string
 end
-puts encrypt("abc") # bcd
-puts encrypt("zed") # afe
-puts decrypt("bcd") # abc
-puts decrypt("afe") # zed
+# puts encrypt("abc") # bcd
+# puts encrypt("zed") # afe
+# puts decrypt("bcd") # abc
+# puts decrypt("afe") # zed
+# # evaluate the encrypt method first and returns the string
+# # then decrypt is just passed the string from encrypt
+# puts decrypt(encrypt("swordfish"))
+
+# Asks a secret agent (the user) whether they would 
+puts "would you like to encrypt or decrypt your password?"
+answer = gets.chomp.downcase
+until answer == "encrypt" || answer == "decrypt"
+	puts "your input was invalid."
+	puts "would you like to encrypt or decrypt your password?"
+	answer = gets.chomp.downcase
+end
+# Asks them for the password
+puts "Please enter your password?"
+password = gets.chomp
+# Conducts the requested operation,
+if answer == 'encrypt'
+	puts encrypt(password)
+elsif answer == "decrypt"
+	puts decrypt(password)
+end 
