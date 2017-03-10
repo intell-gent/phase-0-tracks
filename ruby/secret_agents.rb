@@ -5,13 +5,15 @@ counter = 0
 # iterate thourgh a string one index at a time
 while counter < string.length
 	# for each index set the charactere to the next character
-	string[counter] = string[counter].next
+	string[counter] = string[counter].next unless string[counter] == "z"
+	if string[counter] == "z"
+	string[counter] = "a"
+	end
 	# incrament the counter
 	counter += 1
 end
 string
 end
-puts encrypt('abc')
 
 # def a method
 def decrypt(string)
@@ -28,4 +30,7 @@ def decrypt(string)
 	end
 	string
 end
-puts decrypt('bcd')
+puts encrypt("abc") # bcd
+puts encrypt("zed") # afe
+puts decrypt("bcd") # abc
+puts decrypt("afe") # zed
