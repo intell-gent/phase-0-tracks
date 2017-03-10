@@ -14,7 +14,18 @@ end
 puts encrypt('abc')
 
 # def a method
+def decrypt(string)
 # set a counter = to 0
+	counter = 0
+	alphabet = "abcdefghijklmnopqrstuvwxyz"
 # iterate thourgh a string one index at a time
-# for each index set the charactere to the previous character
-# incrament the counter
+	while counter < string.length
+		# for each index set the charactere to 
+		#the previous character
+		string[counter] = alphabet[alphabet.index(string[counter]) - 1]
+		# incrament the counter
+		counter += 1
+	end
+	string
+end
+puts decrypt('bcd')
