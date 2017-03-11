@@ -17,6 +17,19 @@ garlic_choice = gets.chomp
 puts "Would you like to enroll in the company’s health insurance?"
 insurance_andswer = gets.chomp
 
+done = false
+while done == false
+	gets "please tell me your your alergies, you can type done when your finished."
+	alergy = gets.chomp.downcase
+	if alergy == "sunshine" || alergy == "garlic" || alergy == "sun"
+		return "Probably a valmpire."
+	elsif alergy == "done"
+		done = true;
+		puts "thanks for taking time to infrom us."
+	end
+end
+
+
 puts "Welcome: #{name} to werewolf Inc."
 puts "It looks like your #{age} years old."
 puts "You were born in: #{birth}."
