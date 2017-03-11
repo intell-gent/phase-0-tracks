@@ -33,6 +33,15 @@ end
 puts "Welcome: #{name} to werewolf Inc."
 puts "It looks like your #{age} years old."
 puts "You were born in: #{birth}."
+if garlic_choice == "no" 
+	puts "you Would not like to have some garlic bread."
+elsif garlic_choice == "yes"
+	puts "you Would like to have some garlic bread."
+elsif garlic_choice != "no" || garlic_choice != "yes"
+	puts "you did not ansewer with yes or no."
+else
+	puts "i did not understand your garlic choice."
+end
 
 count += 1
 if garlic_choice.downcase == "no" && valmpire == true
