@@ -1,6 +1,7 @@
 puts "How many employees will we be processing today?"
 employee_count = gets.chomp.to_i
-
+count = 0
+while employee_count > count	
 puts "What is your name?"
 name = gets.chomp
 
@@ -21,3 +22,5 @@ puts "It looks like your #{age} years old."
 puts "You were born in: #{birth}."
 puts "you Would like to have some garlic bread."
 puts "you are also intrested in our insurance program."
+count += 1
+end
