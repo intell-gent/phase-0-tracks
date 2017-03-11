@@ -42,7 +42,13 @@ elsif garlic_choice != "no" || garlic_choice != "yes"
 else
 	puts "i did not understand your garlic choice."
 end
-
+if insurance_andswer == "no" 
+	puts "you are not intrested in our insurance program."
+elsif insurance_andswer == "yes"
+	puts "you are intrested in our insurance program."
+else
+	puts "i did not understand your insurance choice."
+end
 count += 1
 if garlic_choice.downcase == "no" && valmpire == true
 	puts  "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
