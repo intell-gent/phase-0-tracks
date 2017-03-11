@@ -18,15 +18,18 @@ puts "Would you like to enroll in the company’s health insurance?"
 insurance_andswer = gets.chomp
 valmpire = false
 done = false
-while done == false
-	gets "please tell me your your allergies, you can type done when your finished."
+until done == true
+	puts "please tell me more of your your allergies. if you are finished you can type done."
 	allergy = gets.chomp.downcase
 	if allergy == "sunshine" || allergy == "garlic" || allergy == "sun"
+		puts "your allergic to #{allergy}"
 		puts "Probably a valmpire."
 		valmpire = true
 	elsif allergy == "done"
-		done = true;
 		puts "thanks for taking time to infrom us."
+		done = true;
+	else
+		puts "ok so your allergic to #{allergy} good to know"
 	end
 end
 
