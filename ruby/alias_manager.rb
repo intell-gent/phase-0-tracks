@@ -9,9 +9,7 @@ def spy_name_grab
 	puts "Give me a name I will give you your alias?"
 	# get a name
 	name_answer = gets.chomp
-	if name_answer == "done"
-		break
-	end
+	break if name_answer == "done"
 	puts "Type done when you are done giving names."
 	name_list.push(name_answer)
 	alias_list.push(mid_name_rev(name_answer.downcase))
