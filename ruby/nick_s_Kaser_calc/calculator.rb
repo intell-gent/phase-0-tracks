@@ -12,6 +12,11 @@ def user_calc
 	break if answer.downcase == "done"
 	calculations.push(answer)
 	answer = answer.split(" ")
+	if answer[1] == "/" && answer[2] == "0"
+		puts "sorry you can not devide by 0"
+		answer[2] = answer[0]
+		answer[0] = "0"
+	end
 	result = calculate(answer[0].to_f, answer[1], answer[2].to_f)
 	results.push(result)
 	counter += 1
