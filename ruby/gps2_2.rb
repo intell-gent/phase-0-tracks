@@ -63,10 +63,38 @@ def update_quantity(hash_list, item, quantity)
 end
 
 # Method to print a list and make it look pretty
-# input:
+# input: hash list 
 # steps:
+  # 
 # output:
+# testing array decon idea
+# def pretty_list(hash_list)
+#   items = []
+#   quantities = []
+#   hash_list.each do |item, quantity|  
+#     items.push(item) 
+#     quantities.push(quantity)
+#     end
+#     p items
+#     p quantities
+#   items.each do |item|
+#     puts "the item: #{item}."
+#   end
+# end
 
+# with a do looop
+# def pretty_list(hash_list)
+#   hash_list.each do |item, quantity| 
+#     puts "the item: #{item}, the quantity is: #{quantity}"
+#   end
+# end
+
+def pretty_list(hash_list)
+  puts "here your GROCERY LIST!!!!"
+  puts "--------------------------------------"
+  hash_list.each { |item, quantity| puts "the item: #{item}, the quantity is: #{quantity}" }
+  puts "--------------------------------------"
+end
 
 #DRIVER CODE-------------------
 
@@ -74,3 +102,4 @@ original_list = create_list("carrots apples cereal pizza")
 original_list = add_item(original_list, "soda", 4000)
 remove_item(original_list, 'soda')
 update_quantity(original_list, "soda", 6)
+pretty_list(original_list)
