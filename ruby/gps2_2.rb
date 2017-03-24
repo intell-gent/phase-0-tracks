@@ -46,9 +46,21 @@ def remove_item(hash_list, item)
 end
 
 # Method to update the quantity of an item
-# input:
+# input: hash list, item, quantity
 # steps:
-# output:
+  # addeds quanity to existing item
+  # add if statement to check for item in hash
+# output: outputs hash with updated quantity
+def update_quantity(hash_list, item, quantity)
+  if hash_list.has_key?(item)
+    hash_list[item] = quantity
+    puts "updated #{item} with quantity of: #{quantity}"
+  else
+    puts "item not found."
+    puts "please enter a item in the list."
+  end
+  p hash_list
+end
 
 # Method to print a list and make it look pretty
 # input:
