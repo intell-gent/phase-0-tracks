@@ -90,7 +90,7 @@ end
 # end
 
 def pretty_list(hash_list)
-  puts "here your GROCERY LIST!!!!"
+  puts "Here your GROCERY LIST!!!!"
   puts "--------------------------------------"
   hash_list.each { |item, quantity| puts "the item: #{item}, the quantity is: #{quantity}" }
   puts "--------------------------------------"
