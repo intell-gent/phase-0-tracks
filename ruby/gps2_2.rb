@@ -35,9 +35,15 @@ def add_item(hash_list, new_item, quantity = 1)
 end
 
 # Method to remove an item from the list
-# input:
+# input: hash list, item
 # steps:
-# output:
+  # delete item form the list
+# output: # outputs updated hash
+
+def remove_item(hash_list, item)
+  hash_list.delete(item)
+  p hash_list
+end
 
 # Method to update the quantity of an item
 # input:
@@ -53,4 +59,5 @@ end
 #DRIVER CODE-------------------
 
 original_list = create_list("carrots apples cereal pizza")
-add_item(original_list, "soda", 4000)
+original_list = add_item(original_list, "soda", 4000)
+remove_item(original_list, 'soda')
