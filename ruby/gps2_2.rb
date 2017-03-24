@@ -73,3 +73,4 @@ end
 original_list = create_list("carrots apples cereal pizza")
 original_list = add_item(original_list, "soda", 4000)
 remove_item(original_list, 'soda')
+update_quantity(original_list, "soda", 6)
