@@ -62,7 +62,7 @@ example_ethnicities = ["black", "Latino", "white", "Japanese-African",
 												"prefer not to say", "Mystical Creature (unicorn)", "N/A"]
 example_names = ["niki", "Joe", "jane", "tomy", "francis", "jewl", "kat", "lauren", "pat", "bob", "ana"]
 rand(1..15).times do
-	santa = Santa.new(example_genders[rand(0..example_genders.length - 1)], example_ethnicities[rand(0..example_ethnicities.length - 1)], rand(0..140), example_names[rand(0..example_names.length - 1)] ) 
+	santa = Santa.new(example_genders[rand(example_genders.length)], example_ethnicities[rand(example_ethnicities.length)], rand(0..140), example_names[rand(example_names.length)] ) 
 	santas << santa
 	puts "--------------------------------------------------------"
 	puts "Here is a new santa"
