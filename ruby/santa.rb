@@ -1,8 +1,9 @@
 class Santa
 	attr_reader :age, :ethnicity
-	attr_accessor :gender
-	def initialize(gender = "N/A", ethnicity = "N/A", age = 0)
+	attr_accessor :gender, :name
+	def initialize(gender = "N/A", ethnicity = "N/A", age = 0, person_name = "N/A")
 		puts "Initializing Santa instance ..."
+		@name = person_name
 		@gender = gender
 		@ethnicity = ethnicity
 		@reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", 
@@ -40,3 +41,14 @@ class Santa
 	# 	@ethnicity
 	# end
 end
+# Driver code
+john = Santa.new("male", "Latino", 40, "john")
+p john.age
+p john.gender
+p john.ethnicity
+john.get_mad_at("Rudolph")
+john.speak
+john.eat_milk_and_cookie("sugar")
+john.celebrate_birthday
+john.gender = "Memesexual"
+p john
