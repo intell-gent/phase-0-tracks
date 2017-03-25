@@ -103,3 +103,17 @@ original_list = add_item(original_list, "soda", 4000)
 remove_item(original_list, 'soda')
 update_quantity(original_list, "soda", 6)
 pretty_list(original_list)
+
+# Reflect
+# What did you learn about pseudocode from working on this challenge?
+  # It helps if you take things one step at a time and to think ahead before you code
+# What are the tradeoffs of using arrays and hashes for this challenge?
+  # arrays are more simple but less descript hashes are more descript but less simple
+# What does a method return?
+  # it has a implice return so it returns what you call
+# What kind of things can you pass into methods as arguments?
+  # strings, true/false, integer other methods
+# How can you pass information between methods?
+  # using parameters and return you can feed one into the next
+# What concepts were solidified in this challenge, and what concepts are still confusing?
+  # the pseudocode process and use
