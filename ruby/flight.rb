@@ -16,4 +16,4 @@ bird = Bird.new
 bird.take_off(800)
 
 plane = Plane.new
-Plane.take_off(30000)
+plane.take_off(30000)
