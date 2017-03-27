@@ -1,5 +1,5 @@
 class WordGuessGame
-  attr_reader :guess_count, :is_over
+  attr_reader :guess_count, :is_over, :max_guess
   attr_accessor :word, :hide_word
   # One user can enter a word (or phrase, if you would like your game to support that), 
   def initialize(word = gets.chomp)
@@ -28,6 +28,8 @@ class WordGuessGame
       # Repeated guesses do not count against the user.
       puts "You already answer that letter"
       @guess_count -= 1
+      # uncomment for testing
+      # return "repeated letter"
     end
     # The guessing player receives continual feedback on the current state of the word. 
     # So if the secret word is "unicorn", the user will start out seeing something 
@@ -38,11 +40,19 @@ class WordGuessGame
       @guess << guess
       @hide_word[i] = guess
       @hide_word =  @hide_word.join(" ")
+      # uncomment for testing
+      # return @hide_word
     elsif guess.length > 1
       puts "Your answer is more that one character"
+      @guess << guess
        @guess_count -= 1
+        # uncomment for testing
+        # return "Your answer is more that one character"
     else
       puts "Sorry there are no: #{guess}"
+      @guess << guess
+      # uncomment for testing
+      # return "Sorry there are no: #{guess}"
     end
     # end condition
     if @guess_count == @max_guess
@@ -77,4 +87,4 @@ def user_interface
   puts "the word was: #{game.word}"
   puts "Here is what you had: #{game.hide_word}"
 end
-user_interface
+# user_interface
