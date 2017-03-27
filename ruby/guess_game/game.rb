@@ -1,9 +1,8 @@
 class WordGuessGame
   attr_reader :guess_count, :is_over
   attr_accessor :word, :hide_word
+  # One user can enter a word (or phrase, if you would like your game to support that), 
   def initialize(word = gets.chomp)
-    # One user can enter a word (or phrase, if you would like your game to support that), 
-    # and another user attempts to guess the word.
     puts "Give me a word for someone to guess."
     @word = word
     @hide_word = ""
