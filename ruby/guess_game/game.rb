@@ -53,6 +53,14 @@ class WordGuessGame
     else
         false
     end
+    # The user should get a congratulatory message if they win, and a taunting message if they lose   
+    puts "the word was: #{@word}"
+    puts "Here is what you had: #{@hide_word}"
+    if @word == @hide_word
+        puts "Congratulations you WIN!!"
+      else
+        puts "Ha Ha you lost better luck next time."
+    end
   end
   
 end
@@ -67,15 +75,6 @@ def user_interface
     puts "What is the word i am thinking of: #{game.hide_word}? Enter a letter of the alphabet"
     guess = gets.chomp.downcase
     game.check_guess(guess)
-  end
-
-  # The user should get a congratulatory message if they win, and a taunting message if they lose   
-  puts "the word was: #{game.word}"
-  puts "Here is what you had: #{game.hide_word}"
-  if game.word == game.hide_word
-      puts "Congratulations you WIN!!"
-    else
-      puts "Ha Ha you lost better luck next time."
   end
 end
 user_interface
