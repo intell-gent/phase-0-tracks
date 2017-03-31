@@ -4,6 +4,15 @@ class Spaceship
   def initialize(name, speed)
     @name = name
     @speed = speed
+    @shield_active = false
+  end
+  def disable_shield
+    puts "Dropping Shields..."
+    @shield_active = false
+  end
+  def enable_shield
+    puts "Raising SHields..."
+    @shield_active = true
   end
 end
 
@@ -19,3 +28,6 @@ p ship1.name
 p ship1.speed
 # ship1.speed = 2000 works as intended by throwing and error
 p ship1
+
+ship2.enable_shield
+ship2.disable_shield
