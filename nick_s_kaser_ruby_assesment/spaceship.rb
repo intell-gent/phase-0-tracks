@@ -65,9 +65,9 @@ class Spaceship
 end
 
 # Driver code
-ship1 = Spaceship.new( "USS Enterprise", 200000)
+# ship1 = Spaceship.new( "USS Enterprise", 200000)
 # p ship1
-ship2 = Spaceship.new( "HMS Andromeda", 108277)
+# ship2 = Spaceship.new( "HMS Andromeda", 108277)
 # p ship2
 
 # p ship1.name
@@ -83,14 +83,14 @@ ship2 = Spaceship.new( "HMS Andromeda", 108277)
 # ship2.warp_to("Mars")
 # p ship2
 
-ship1.tractor_beam("cow")
-ship1.tractor_beam("giant cow")
+# ship1.tractor_beam("cow")
+# ship1.tractor_beam("giant cow")
 
-ship2.pickup("cow","Mars")
-ship2.pickup("cat","Space")
-ship2.pickup("bird","Venus")
+# ship2.pickup("cow","Mars")
+# ship2.pickup("cat","Space")
+# ship2.pickup("bird","Venus")
 
-ship2.print_invintory
+# ship2.print_invintory
 
-p ship1.total_weight
-p ship2.total_weight
+# p ship1.total_weight
+# p ship2.total_weight
