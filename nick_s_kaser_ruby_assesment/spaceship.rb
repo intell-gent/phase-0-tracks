@@ -5,6 +5,7 @@ class Spaceship
     @name = name
     @speed = speed
     @shield_active = false
+    @location = "Earth"
   end
   def disable_shield
     puts "Dropping Shields..."
@@ -13,6 +14,10 @@ class Spaceship
   def enable_shield
     puts "Raising SHields..."
     @shield_active = true
+  end
+  def warp_to(location)
+    puts "Traveling at #{@speed} MPH to #{location}."
+    @location = location
   end
 end
 
@@ -31,3 +36,5 @@ p ship1
 
 ship2.enable_shield
 ship2.disable_shield
+
+ship2.warp_to("Mars")
