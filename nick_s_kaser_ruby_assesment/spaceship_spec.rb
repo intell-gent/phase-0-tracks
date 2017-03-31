@@ -37,5 +37,4 @@ describe Spaceship do
     ship.pickup("bird","Venus")
     expect(ship.total_weight).to eq 1058
   end
-
 end
