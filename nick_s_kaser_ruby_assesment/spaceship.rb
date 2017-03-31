@@ -45,6 +45,13 @@ class Spaceship
     end
     puts "----------------------------------------"
   end
+  def total_weight
+    weight = 0
+    @inventory.each do |item, location|
+      weight += get_weight(item)
+    end
+    weight
+  end
   private
   def get_weight(string)
     weight = 0
@@ -84,3 +91,6 @@ ship2.pickup("cat","Space")
 ship2.pickup("bird","Venus")
 
 ship2.print_invintory
+
+p ship1.total_weight
+p ship2.total_weight
