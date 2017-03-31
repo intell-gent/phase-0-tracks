@@ -1,6 +1,6 @@
 class Spaceship
   attr_accessor :name
-  attr_reader :speed
+  attr_reader :speed, :inventory
   def initialize(name, speed)
     @name = name
     @speed = speed
