@@ -2,15 +2,15 @@ require_relative "spaceship"
 describe Spaceship do
   let(:ship) {Spaceship.new("USS Enterprise", 200000)}
   # naming
-  it "can read the name and write a new one" do
+  it "can read the name and updates when given a new one" do
     expect(ship.name).to eq "USS Enterprise"
-    ship1.name = "SSS S S S"
+    ship.name = "USS Doomed"
+    expect(ship.name).to eq "USS Doomed"
   end
-  # # read speed
-  # it "Placeholder" do
-  #   expect(ship.cod()).to eq "foo"
-  #   p ship1.speed
-  # end
+  # read speed
+  it "Can read the speed outside the class" do
+    expect(ship.speed).to eq 200000
+  end
 
   # # shields
   # it "Placeholder" do
