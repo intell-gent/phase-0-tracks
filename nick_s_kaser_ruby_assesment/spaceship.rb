@@ -6,6 +6,7 @@ class Spaceship
     @speed = speed
     @shield_active = false
     @location = "Earth"
+    @inventory = {}
   end
   def disable_shield
     puts "Dropping Shields..."
@@ -19,6 +20,7 @@ class Spaceship
     puts "Traveling at #{@speed} MPH to #{location}."
     @location = location
   end
+  
 end
 
 # Driver code
@@ -38,3 +40,4 @@ ship2.enable_shield
 ship2.disable_shield
 
 ship2.warp_to("Mars")
+p ship2
