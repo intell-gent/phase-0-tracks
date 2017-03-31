@@ -12,12 +12,11 @@ describe Spaceship do
     expect(ship.speed).to eq 200000
   end
 
-  # # shields
-  # it "Placeholder" do
-  #   expect(ship.cod()).to eq "foo"
-  #   ship2.enable_shield
-  #   ship2.disable_shield
-  # end
+  # shields
+  it "Can change the state of shields" do
+    expect(ship.disable_shield).to eq false
+    expect(ship.enable_shield).to eq true
+  end
   # # warp
   # it "Placeholder" do
   #   expect(ship.cod()).to eq "foo"
