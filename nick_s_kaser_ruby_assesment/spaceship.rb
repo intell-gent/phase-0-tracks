@@ -29,7 +29,8 @@ class Spaceship
       true
     else
       puts "sorry can not beam aboard the: #{string_desc} is too heavy."
-      false
+      enable_shield
+      return false
     end
     enable_shield
   end

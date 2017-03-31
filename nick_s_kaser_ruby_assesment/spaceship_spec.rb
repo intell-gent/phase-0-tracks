@@ -17,17 +17,15 @@ describe Spaceship do
     expect(ship.disable_shield).to eq false
     expect(ship.enable_shield).to eq true
   end
-  # # warp
-  # it "Placeholder" do
-  #   expect(ship.cod()).to eq "foo"
-  #   ship2.warp_to("Mars")
-  # end
-  # # Beam
-  # it "Placeholder" do
-  #   expect(ship.cod()).to eq "foo"
-  #   ship1.tractor_beam("cow")
-  #   ship1.tractor_beam("giant cow")
-  # end
+  # warp
+  it "Can warp to new locations" do
+    expect(ship.warp_to("Mars")).to eq "Mars"
+  end
+  # Beam
+  it "can beam items aboard and it it is not too large" do
+    expect(ship.tractor_beam("cow")).to eq true
+    expect(ship.tractor_beam("giant cow")).to eq false
+  end
   # # pick up
   # it "Placeholder" do
   #   expect(ship.cod()).to eq "foo"
