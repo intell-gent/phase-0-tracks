@@ -1,0 +1,99 @@
+
+sqlite> .schema
+CREATE TABLE students (
+id INTEGER PRIMARY KEY,
+idclass int,
+name VARCHAR(255),
+age int,
+credits int,
+grade VARCHAR(2),
+FOREIGN KEY (idclass) REFERENCES classes(idclass)
+);
+CREATE TABLE subjects (
+idsubject INTEGER PRIMARY KEY,
+name CHARACTER
+);
+CREATE TABLE classes (
+idclass INTEGER PRIMARY KEY,
+idsubject int,
+name CHARACTER,
+description CHARACTER,
+creditvalue int,
+FOREIGN KEY (idsubject) REFERENCES subject(idsubject)
+);
+sqlite>
+
+sqlite> INSERT INTO classes (idsubject, name, description, creditvalue) VALUES (2, "Algebra", "This is an Intro class", 3.0);
+sqlite> select * from classes                                                                                  ...> ;
+idclass     idsubject   name        description             creditvalue
+----------  ----------  ----------  ----------------------  -----------
+1           2           Algebra     This is an Intro class  3
+sqlite> INSERT INTO classes (idsubject, name, description, creditvalue) VALUES (1, "US Government", "This iscovers the US government", 2.0);
+sqlite> INSERT INTO classes (idsubject, name, description, creditvalue) VALUES (3, "Geology", "This Class Rocks!", 3.0);
+sqlite> INSERT INTO classes (idsubject, name, description, creditvalue) VALUES (4, "SQL", "We use sqlite3", 1.0);
+sqlite> INSERT INTO classes (idsubject, name, description, creditvalue) VALUES (5, "Auto Cad", "Advanced level 3D modeling", 4.0);
+
+sqlite>  INSERT INTO subjects (name) VALUES ("Political Science");
+sqlite> SELECT * FROM subjects
+   ...> ;
+idsubject   name
+----------  -----------------
+1           Political Science
+sqlite>
+sqlite> INSERT INTO subjects (name) VALUES ("Math");
+sqlite> INSERT INTO subjects (name) VALUES ("Earth Science");
+sqlite> INSERT INTO subjects (name) VALUES ("Computer Scienc");
+sqlite> INSERT INTO subjects (name) VALUES ("Engineering");
+sqlite> SELECT * FROM subjects;
+idsubject   name
+----------  -----------------
+1           Political Science
+2           Math
+3           Earth Science
+4           Computer Scienc
+5           Engineering
+
+sqlite> UPDATE students SET idclass=1 WHERE name="Beth Mcmillian";
+sqlite> UPDATE students SET idclass=3 WHERE name="Jillian Smith";
+sqlite> UPDATE students SET idclass=4 WHERE name="Gobire Hogar";
+sqlite> UPDATE students SET idclass=4 WHERE name="Dylan Dulards";
+
+
+
+
+sqlite> SELECT subjects.name, classes.name FROM classes JOIN subjects ON classes.idsubject = subjects.idsubject;
+name        name
+----------  ----------
+Math        Algebra
+Political   US Governm
+Earth Scie  Geology
+Computer S  SQL
+Engineerin  Auto Cad
+
+sqlite> SELECT students.name, classes.name, students.grade FROM students JOIN classes ON students.idclass = classes.idclass;
+name            name        grade
+--------------  ----------  ----------
+Beth McMillian  Algebra     B-
+Dylan Dulards   SQL         C-
+Jillian Smith   Geology     A
+Gobire Holgar   SQL         A+
+
+4           4           Gobire Holgar   23          12          A+          4           4           SQL         We use sqlite3          1
+sqlite> SELECT * FROM students, classes WHERE students.idclass = classes.idclass;+
+
+sqlite> DELETE FROM students WHERE name="Dylan Dulards";
+sqlite> SELECT * FROM students
+   ...> ;
+id          idclass     name            age         credits     grade
+----------  ----------  --------------  ----------  ----------  ----------
+1           1           Beth McMillian  25          32          B-
+3           3           Jillian Smith   30          45          A
+4           4           Gobire Holgar   23          12          A+
+
+sqlite> SELECT students.name,  students.grade, classes.creditvalue, classes.name, classes.description FROM students INNER JOIN classes ON students.idclass = classes.idclass;
+name            grade       creditvalue  name        description
+--------------  ----------  -----------  ----------  ----------------------
+Beth McMillian  B-          3            Algebra     This is an Intro class
+Jillian Smith   A           3            Geology     This Class Rocks!
+Gobire Holgar   A+          1            SQL         We use sqlite3
+sqlite>
