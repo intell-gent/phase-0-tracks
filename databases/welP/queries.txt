@@ -1,0 +1,86 @@
+sqlite> INSERT INTO reviews (stars, comment, business_id, user_id) VALUES (2, "f
+ish tastes old shoe leather", 6, 1);
+sqlite> INSERT INTO reviews (stars, comment, business_id, user_id) VALUES (5, "p
+lace was jumping", 3, 1);
+sqlite> INSERT INTO reviews (stars, comment, business_id, user_id) VALUES (4, "h
+as very old timey architecture", 1, 4);
+sqlite> INSERT INTO reviews (stars, comment, business_id, user_id) VALUES (5, "a
+rrived very quickly", 2, 6);
+sqlite> INSERT INTO reviews (stars, comment, business_id, user_id) VALUES (1, "t
+hey caused my toilet to explode!", 5, 4);
+sqlite> INSERT INTO reviews (stars, comment, business_id, user_id) VALUES (4, "I
+ drank so much sake I didn't notice the taste of the sushi", 6, 1);
+
+CREATE TABLE businesses (
+id INTEGER PRIMARY KEY,
+name VARCHAR(255)
+);
+CREATE TABLE users (
+id INTEGER PRIMARY KEY,
+first_name VARCHAR(255),
+last_name VARCHAR(255)
+);
+CREATE TABLE reviews (
+id INTEGER PRIMARY KEY,
+stars INT,
+comment VARCHAR(255),
+business_id INT,
+user_id INT,
+FOREIGN KEY (business_id) REFERENCES businesses(id),
+FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+RELEASE 2 - #2
+
+Input --
+
+ SELECT * FROM reviews JOIN users ON users.id=reviews.user_id
+ JOIN businesses ON businesses.id=reviews.business_id;
+
+ Output -- 
+
+1|2|fish tastes old shoe leather|6|1|1|Bradford|Pitt|6|Sushi World
+2|5|place was jumping|3|1|1|Bradford|Pitt|3|The Beagle Nightclub
+3|4|has very old timey architecture|1|4|4|Steven|Wonder|1|Grundy Hollow Wedding
+Chapel
+4|5|arrived very quickly|2|6|6|Merryl|Streepman|2|Amir's Towing
+5|1|they caused my toilet to explode!|5|4|4|Steven|Wonder|5|Plumbing by Janet
+6|4|I drank so much sake I didn't notice the taste of the sushi|6|1|1|Bradford|P
+itt|6|Sushi World
+
+
+RELEASE 2 - #3
+
+Input -- 
+
+ SELECT users.first_name, users.last_name, reviews.stars, reviews.comment, businesses.name
+ FROM reviews JOIN users ON users.id=reviews.user_id
+ JOIN businesses ON businesses.id=reviews.business_id;
+
+Output -- 
+
+first_name  last_name   stars       comment                       name
+----------  ----------  ----------  ----------------------------  -----------
+Bradford    Pitt        2           fish tastes old shoe leather  Sushi World
+Bradford    Pitt        5           place was jumping             The Beagle
+Steven      Wonder      4           has very old timey architect  Grundy Holl
+Merryl      Streepman   5           arrived very quickly          Amir's Towi
+Steven      Wonder      1           they caused my toilet to exp  Plumbing by
+Bradford    Pitt        4           I drank so much sake I didn'  Sushi World
+
+
+RELEASE 2 - #4
+
+Input -- 
+
+ SELECT users.first_name, users.last_name, reviews.stars, reviews.comment, businesses.name
+ FROM reviews JOIN users ON users.id=reviews.user_id
+ JOIN businesses ON businesses.id=reviews.business_id
+ WHERE businesses.name="Sushi World";
+
+Output -- 
+
+first_name  last_name   stars       comment                       name
+----------  ----------  ----------  ----------------------------  -----------
+Bradford    Pitt        2           fish tastes old shoe leather  Sushi World
+Bradford    Pitt        4           I drank so much sake I didn'  Sushi World
