@@ -13,7 +13,7 @@
 ## release 1
 
 * What are some of the key design philosophies of the Linux operating system?
-        - "Treat all users with respect." the idea of allowing power, freedom, and flexibility to the user.
+    - "Treat all users with respect." the idea of allowing power, freedom, and flexibility to the user.
 * In your own words, what is a VPS (virtual private server)? What, according to your research, are the advantages of using a VPS?
     - it uses a virtual machine a none physical software generated machine; to build a virtual server for hosting purposes. 
 * Optional bonus question: Why is it considered a bad idea to run programs as the root user on a Linux system?
