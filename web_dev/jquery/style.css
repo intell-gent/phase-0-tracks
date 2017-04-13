@@ -1,26 +1,8 @@
 
 body {
-
+background-color: lightblue;
 }
-h3 {
-
-}
-p {
-
-}
-
-.title {
-
-}
-.headers{
-
-}
-.footer_header{
-  
-}
-#ttp {
-
-}
-#trust_button {
-
+.focus {
+  background-color: limegreen;
+  border: 3px solid red;
 }
